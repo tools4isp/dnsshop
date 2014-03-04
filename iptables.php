@@ -9,7 +9,7 @@
         // mysql database met alle firewall rules
         $config['db']['mysql']['firewall']['host'] = "localhost"; //mysql server
         $config['db']['mysql']['firewall']['user'] = "firewall"; // mysql user
-        $config['db']['mysql']['firewall']['pass'] = "d8DS32h@q245qa"; // mysql pass
+        $config['db']['mysql']['firewall']['pass'] = ""; // mysql pass
         $config['db']['mysql']['firewall']['database'] = "firewall"; //mysql database
 
 
