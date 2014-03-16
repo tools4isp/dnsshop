@@ -204,3 +204,61 @@ CREATE TABLE IF NOT EXISTS `user_subuser` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `user` (`username`, `pass`, `is_admin`, `subsuspend`, `id_master`, `suspend`, `default_lang`, `handelsnaam`, `home_page`, `layout`, `email`, `aantal_login`, `aanmaak_datum`, `aantal_wijzigingen`, `laatste_wijziging`) VALUES
+('admin', '2c0a054fd5968000c70cf2a0547542c6', 1, 0, 0, 0, 'nl', 'DnsShop', 'https://github.com/tools4isp/dnsshop', 'default', 'admin@dnsshop.,org', 0, '2014-03-16 16:44:16', 0, '0000-00-00 00:00:00');
+
+INSERT INTO `user_right` (`id`, `userid`, `right`, `user`, `subuser`) VALUES
+(314, 0, 'api', 1, 0),
+(315, 0, 'apitoegang', 1, 340),
+(63, 0, 'dns', 2, 0),
+(67, 0, 'dnsdombekijken', 2, 315),
+(68, 0, 'dnsdombewerken', 2, 316),
+(74, 0, 'dnsdomglobbew', 2, 322),
+(64, 0, 'dnsdomoverzicht', 2, 312),
+(66, 0, 'dnsdomtoevoegen', 2, 314),
+(65, 0, 'dnsdomverwijderen', 2, 313),
+(76, 0, 'dnsdomzoeken', 2, 324),
+(77, 0, 'dnsrecglobbew', 2, 325),
+(309, 0, 'dnssmbewerken', 2, 337),
+(313, 0, 'dnssmdomontkop', 2, 339),
+(304, 0, 'dnssmoverzicht', 2, 335),
+(305, 0, 'dnssmtoevoegen', 2, 336),
+(310, 0, 'dnssmverwijderen', 2, 338),
+(303, 0, 'dnssmzoeken', 2, 334),
+(86, 0, 'dnstembekijken', 2, 333),
+(70, 0, 'dnstembewerken', 2, 318),
+(73, 0, 'dnstemkoppelen', 2, 321),
+(72, 0, 'dnstemoverzicht', 2, 320),
+(69, 0, 'dnstemtoevoegen', 2, 317),
+(71, 0, 'dnstemverwijderen', 2, 319),
+(75, 0, 'dnstemzoeken', 2, 323),
+(14, 0, 'klantaanpassen', 5, 306),
+(13, 0, 'klantbekijken', 5, 305),
+(18, 0, 'klantoverzetten', 5, 310),
+(12, 0, 'klantoverzicht', 5, 304),
+(15, 0, 'klantrechten', 5, 307),
+(16, 0, 'klanttoevoegen', 5, 308),
+(62, 0, 'klantverwijderen', 5, 311),
+(17, 0, 'klantzoeken', 5, 309),
+(81, 0, 'pakketbekijken', 6, 328),
+(80, 0, 'pakketbewerken', 6, 327),
+(85, 0, 'pakketoverdragen', 6, 332),
+(83, 0, 'pakketoverzicht', 6, 330),
+(78, 0, 'pakketten', 6, 0),
+(79, 0, 'pakkettoevoegen', 6, 326),
+(82, 0, 'pakketverwijderen', 6, 329),
+(84, 0, 'pakketzoeken', 6, 331),
+(8, 0, 'reseller', 5, 0),
+(940, 0, 'stream', 7, 0),
+(942, 0, 'streambekijken', 7, 342),
+(943, 0, 'streambewerken', 7, 343),
+(945, 0, 'streamoverzicht', 7, 345),
+(946, 0, 'streamtoevoegen', 7, 346),
+(944, 0, 'streamverwijderen', 7, 344),
+(941, 0, 'streamzoeken', 7, 341),
+(9, 0, 'suspend', 5, 301),
+(10, 0, 'unsuspend', 5, 302),
+(11, 0, 'wwreset', 5, 303);
+
+
