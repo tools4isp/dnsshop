@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `dns_dom_results` (
   `info` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `dom_id` (`dom_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21145 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `dns_templates` (
   `account` int(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`,`account`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `dns_templates_records` (
   `prio` int(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `template_id` (`template_id`,`name`,`type`,`content`,`ttl`,`prio`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=312 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `pakketten` (
   `pakket_id` int(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `type` (`type`,`user_id`,`pakket_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `pakketten_dns` (
   `max_templates` int(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `max_domain` (`max_domain`,`max_templates`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `laatste_wijziging` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `username` (`username`,`pass`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `user_history` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`,`pass`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `user_login_history` (
   `ip` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=900 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `user_right` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `userid_2` (`userid`,`right`),
   KEY `userid` (`userid`,`right`,`user`,`subuser`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1703 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `user_subuser` (
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`,`subuserid`,`type`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=146 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -261,4 +261,8 @@ INSERT INTO `user_right` (`id`, `userid`, `right`, `user`, `subuser`) VALUES
 (10, 0, 'unsuspend', 5, 302),
 (11, 0, 'wwreset', 5, 303);
 
+INSERT INTO `user_subuser` (`userid`, `subuserid`, `type`) VALUES (0, 1, 1);
 
+INSERT INTO `pakketten` (`type`, `user_id`, `pakket_id`) VALUES ('dns', 1, 1);
+
+INSERT INTO `pakketten_dns` (`id`, `max_domain`, `max_templates`) VALUES (1, 1000000, 1000000);
