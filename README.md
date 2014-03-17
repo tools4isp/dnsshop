@@ -26,3 +26,7 @@ the "central" database to <dnsshop mysql database> and "dns" to <powerdns databa
 Username: admin
 
 Password: dnsshop
+
+# Commercial support
+
+Commercial support is available via info@tools4isp.com
