@@ -19,7 +19,7 @@ mysql -u <powerdns mysql user> -p <powerdns mysql database> < powerdns.sql # Inc
 
 Update settings in config.php, look for $lang_dir, $layout_dir, $template_dir and for $config. In $config you need to set 
 
-the "central" database to <dnsshop mysql database> and "dns" to <powerdns database>
+the "central" database to <dnsshop mysql database> and "dns" to <powerdns database> 
 
 # Default login details
 
