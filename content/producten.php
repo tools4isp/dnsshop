@@ -3,7 +3,11 @@
 	// This file is called producten.php
 	fix_is_included($index);
 	
-	
+	if(get_value_get('p') !== FALSE){
+		if(file_exists('functions/'.get_value_get('p').'.php')){ 
+			require_once('functions/'.get_value_get('p').'.php');
+		}
+	}
 	
 	// Types:
 	// - zoeken (niet af)... > verplaatst 
