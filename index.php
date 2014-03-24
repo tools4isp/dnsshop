@@ -1,7 +1,6 @@
 <?php
 	// Created by Mark Scholten
 	// This file is called index.php and is the start for everything, it includes everything that is required
-	// This file should be small
 	// Start session
 	session_start();
 	// Debugging, can be enabled here or disabled
@@ -26,7 +25,7 @@
 		}else{ echo login_create_loginscreen(); exit(); }
 	}
 	if(get_value_get('page') != FALSE){
-		if(get_value_get('page') != 'uitloggen'){ require_once(fix_is_file('content/'.get_value_get('page').'.php','content/home.php')); }
+		if(get_value_get('page') != 'uitloggen'){ if(file_exists('function/'.get_value_get('page').'.php'){ require_once('function/'.get_value_get('page').'.php'); } require_once(fix_is_file('content/'.get_value_get('page').'.php','content/home.php')); }
 		switch ( get_value_get('page') ) {
 			case "home":		$menu = menu_create_information('home');			break;
 			case "gegevens":	$menu = menu_create_information('home');			break;
