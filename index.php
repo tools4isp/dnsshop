@@ -4,7 +4,7 @@
 	// Start session
 	session_start();
 	// Debugging, can be enabled here or disabled
-	ini_set("show_errors","on");
+	ini_set("show_errors","off");
 	error_reporting(E_ALL);
 	ini_set('display_errors',0);
 	
