@@ -503,9 +503,10 @@
 	}
 	function send_email($email,$subject,$message,$mailfrom = 'noreply@sinnerg.nl',$namefrom = 'Do not reply'){
 		global $phpmailer;
+		global $config;
 		$phpmailer->IsSMTP();
-		$phpmailer->Host	   = "spamfilter01.streamservice.nl"; // sets the SMTP server
-		$phpmailer->Port	   = 25;					// set the SMTP port for the GMAIL server
+		$phpmailer->Host	   = $config['smtp']['host']; // sets the SMTP server
+		$phpmailer->Port	   = $config['smtp']['port'];					// set the SMTP port for the GMAIL server
 		$phpmailer->AddReplyTo($mailfrom, $namefrom);
 		$phpmailer->AddAddress($email, $email);
 		$phpmailer->SetFrom($mailfrom,$namefrom);
