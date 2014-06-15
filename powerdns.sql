@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS `dnssec` (
 
 ALTER TABLE `domains` ADD `changed` INT( 5 ) NOT NULL;
 
+ALTER TABLE `supermasters` ADD `id` INT( 25 ) NOT NULL AUTO_INCREMENT PRIMARY KEY;
