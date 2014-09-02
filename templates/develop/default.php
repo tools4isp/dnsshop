@@ -274,6 +274,9 @@ function addnewrow(rownumber)
 		}else{
 		   $content .= '<div class="back"><img src="'.$template_dir.'home_top.png" border="0" valign="middle"></div>';
 		} 
+		if(get_value_session('from_db','is_admin') != FALSE || get_value_session('from_db','is_admin') != 0){
+			$html .= get_current_version($cp_version);
+		}
 	                
 	  $content .= '<p>'.$html.'<br /></p></div>
 	            

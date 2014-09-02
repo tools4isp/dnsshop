@@ -7,6 +7,8 @@
 		if(file_exists('functions/'.get_value_get('p').'.php')){ 
 			require_once('functions/'.get_value_get('p').'.php');
 		}
+	}else{
+		if(file_exists('functions/dns.php')){ require_once('functions/dns.php'); }
 	}
 	
 	// Types:

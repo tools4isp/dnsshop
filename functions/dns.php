@@ -47,7 +47,7 @@
 			global $mysqli_dns;
 			
 			if ( isset( $_POST['submit'] ) ) {
-			  $query = $mysqli_dns->query("SELECT * FROM `domains` WHERE `account` LIKE '".$mysqli_dns->real_escape_string($account)."' AND `name` LIKE '%$_POST[search]%' LIMIT 10"); 
+			  $query = $mysqli_dns->query("SELECT * FROM `domains` WHERE `account` LIKE '".$mysqli_dns->real_escape_string($account)."' AND `name` LIKE '%$_POST[search]%'"); 
 			}
 			
 		
