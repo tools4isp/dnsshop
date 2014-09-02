@@ -30,6 +30,16 @@
 		}
 	}
 	fix_is_included($index);
+	function get_current_version($cp_version){
+		$latest_version_tmp = dns_get_record('dnsshop.version.tools4isp.com',DNS_TXT);
+		$latest_version = $latest_version_tmp[0]['txt'];
+		if($cp_version < $latest_version){
+			$warning_version = '<p><b>Update available!</b> Version '.$latest_version.' is available and you are running '.$cp_version.'.</p>';
+		}else{
+			$warning_version = '';
+		}
+		return $warning_version;
+	}
 	function get_value_get($item,$item2 = FALSE){
 		if($item2 == FALSE){
 			if(isset($_GET) && !empty($_GET) && isset($_GET[$item]) && !empty($_GET[$item]) && $_GET[$item] != ""){

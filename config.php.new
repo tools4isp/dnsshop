@@ -5,16 +5,18 @@
   
 	// Directory with language files
 	$default_lang = "nl";
-	$lang_dir = "/var/www/devmark/lang";
+	$lang_dir = "/var/www/devmark/lang"; // full path
 
 	// Template selcection
 	$template_name = "develop";
-	$layout_dir = "/var/www/devmark/templates/".$template_name;
-	$template_dir = "/devmark/templates/develop/img/icons/";
+	$layout_dir = "/var/www/devmark/templates/".$template_name; // full path
+	$template_dir = "/devmark/templates/develop/img/icons/"; // relative URL (part after the domain name)
 
 	// phpmailer
 	require('phpmailer/class.phpmailer.php');
 	$phpmailer = new PHPMailer(true);
+	$config['smtp']['host'] = 'mailrelay.example.net'; // outgoing mail relay
+	$config['smtp']['port'] = 25;
 	
 	// Central mysql database
 	$config['db']['mysql']['central']['host'] = "localhost"; //mysql server
@@ -28,7 +30,7 @@
 	$config['db']['mysql']['dns']['pass'] = ""; // mysql pass
 	$config['db']['mysql']['dns']['database'] = ""; //mysql database
 	
-	$cp_version = '2.2.6';
+	$cp_version = '2.2.7';
 	// Version 2.2.5
 	/*
 		Roadmap (not yet finished/todo items):
@@ -42,6 +44,7 @@
 			- Meerdere andere vormen van sorteren (kan nog niet)
 			- Improved search (Zoeken op begin of eind van een domeinnaam)
 		Version history:
+			V2.2.7: Bug fixes, added missing images. Added version check (only for admins!). Added option to configure mail relay to use.
 			V2.2.6: Alle wijzigingen worden ook in git.streamservice.nl opgenomen, bugfixes, layout verbetering en feedback formulier toevoegen
 			V2.2.5: Bug fixes + layout vervangen + pakket zoeken verbeterd
 			V2.2.4: Enkele bug fixes
