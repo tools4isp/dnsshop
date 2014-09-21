@@ -1,38 +1,59 @@
 dnsshop
 =======
 
-# Installation instructions
+[![DNS Shop v2.2.7](https://img.shields.io/badge/DNS%20Shop-v2.2.7-brightgreen.svg)](https://github.com/tools4isp/dnsshop/?shop=2.2.7) 
 
-git clone https://github.com/tools4isp/dnsshop.git
 
-mv dnsshop/* `<location where you want the files>`
+# Installation Instructions
 
-cd `<location where you want the files>`
+<p>Note: Change the path for the default folder location</p>
 
-mysql -u root -p
+1) `git clone https://github.com/tools4isp/dnsshop.git`
 
- # Create database for dnsshop and create a user for it
+2) `mv dnsshop/* <location where you want the files>`
 
-mysql -u `<dnsshop mysql user>` -p `<dnsshop mysql database>` < dnsshop.sql
+3) `cd <location where you moved the files>`
 
-mysql -u `<powerdns mysql user>` -p `<powerdns mysql database>` < powerdns.sql 
+# MySQL Setup
 
-# Includes changes based on the default PowerDNS scheme with DNSsec support
+* Login to MYSQL --> `mysql -u root -p`
 
-Copy config.new.php to config.php
+# Import DNS Shop database and PowerDNS schemas to MySQL
 
-Update settings in config.php, 
-look for:
-$lang_dir, $layout_dir, $template_dir and for $config. In $config you need to set 
+* `mysql -u <dnsshop mysql user> -p <dnsshop mysql database> < dnsshop.sql`
 
-the "central" database to <dnsshop mysql database> and "dns" to <powerdns database> 
+* `mysql -u <powerdns mysql user> -p <powerdns mysql database> < powerdns.sql` 
 
-# Default login details
+<p>The schema(s) includes changes based on the default PowerDNS scheme with DNSsec support.</p>
 
-Username: admin
+<p>Note: Do not forget to create user for the same.</p>
 
-Password: dnsshop
+
+4) `cp config.new.php config.php`
+
+5) Update settings in config.php, look for: 
+<ol>
+<li>$lang_dir,</li>
+<li>$layout_dir,</li>
+<li>$template_dir,</li>
+</ol>
+
+6) For $config. In $config you need to set: 
+<ol>
+<li>"central" database to `<dnsshop mysql database>`</li>
+<li>"dns" database to `<powerdns database>`</li>
+</ol>
+
+# Default Login Details
+
+Username: `admin`
+Password: `dnsshop`
 
 # Commercial support
 
 Commercial support is available via info@tools4isp.com
+
+
+Thanks,
+The Management
+DNS Shop
