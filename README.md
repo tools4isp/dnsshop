@@ -6,7 +6,7 @@ dnsshop
 
 # Installation Instructions
 
-<p>Note: Change the path for the default folder location</p>
+<p>Note: Change the default folder location and file paths before you begin further editing.</p>
 
 1) `git clone https://github.com/tools4isp/dnsshop.git`
 
@@ -16,7 +16,10 @@ dnsshop
 
 # MySQL Setup
 
-* Login to MYSQL --> `mysql -u root -p`
+* Login to MYSQL --> `mysql -u root -p` and import the database schemas
+
+OR
+===
 
 # Import DNS Shop database and PowerDNS schemas to MySQL
 
@@ -40,8 +43,8 @@ dnsshop
 
 6) For $config. In $config you need to set: 
 <ol>
-<li>"central" database to `<dnsshop mysql database>`</li>
-<li>"dns" database to `<powerdns database>`</li>
+<li>"central" database to &lt;dnsshop mysql database> </li>
+<li>"dns" database to &lt;powerdns database> </li>
 </ol>
 
 # Default Login Details
