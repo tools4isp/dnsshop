@@ -46,7 +46,7 @@ dnsshop
 
 # Default Login Details
 
-Username: `admin`
+Username: `admin`<br />
 Password: `dnsshop`
 
 # Commercial support
@@ -61,7 +61,7 @@ Channel: #tools4isp
 
 # New version
 
-We are working on a new version. Issues, bug reports and feature requests are welcome so we can fix them in the new version before releasing the new version.
+We are working on a new version. Issues, bug reports and feature requests are welcome so we can fix them in the new version before releasing the new version. The new version will include good documentation.
 
 Thanks,<br />
 The Management<br />
