@@ -1,7 +1,7 @@
 dnsshop
 =======
 
-[![DNS Shop v2.2.7](https://img.shields.io/badge/DNS%20Shop-v2.2.7-brightgreen.svg)](https://github.com/tools4isp/dnsshop/?shop=2.2.7) 
+[![DNS Shop v2.2.7](https://img.shields.io/badge/DNS%20Shop-v2.2.7-brightgreen.svg)](https://github.com/tools4isp/dnsshop/tree/2.2.7) 
 
 
 # Installation Instructions
