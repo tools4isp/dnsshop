@@ -53,6 +53,15 @@ Password: `dnsshop`
 
 Commercial support is available via info@tools4isp.com
 
+# Non-commercial/free support
+
+Free support is available on irc.
+Server: irc.ircunited.com
+Channel: #tools4isp
+
+# New version
+
+We are working on a new version. Issues, bug reports and feature requests are welcome so we can fix them in the new version before releasing the new version.
 
 Thanks,
 The Management
