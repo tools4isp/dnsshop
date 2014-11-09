@@ -43,8 +43,8 @@ OR
 
 6) For $config. In $config you need to set: 
 <ol>
-<li>"central" database to &lt;dnsshop mysql database> </li>
-<li>"dns" database to &lt;powerdns database> </li>
+<li>"central" database to "&lt;dnsshop mysql database&gt;" </li>
+<li>"dns" database to "&lt;powerdns database&gt;" </li>
 </ol>
 
 # Default Login Details
