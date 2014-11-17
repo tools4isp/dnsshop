@@ -1,4 +1,4 @@
-<?
+<?php
 	// All rights for this file are owned by Mark Scholten
 	// This file is called LanguageParser.php
 	fix_is_included($index);
