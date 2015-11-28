@@ -564,10 +564,10 @@
 			foreach($pakketten as $pakket){
 				if($pakket['user_id'] == get_value_session('from_db','id')){
 					if($pakket['type'] == 'dns'){
-						$menu[$lang->translate(25)][$lang->translate(26).' '.$pakket['pakket_id']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
+						$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
 						$menu[$lang->translate(25)][$lang->translate(26).' '.$pakket['pakket_id']]['plaatje'] = 'dns.png';
 					}elseif($pakket['type'] == 'stream'){
-						$menu[$lang->translate(25)][$lang->translate(27).' '.$pakket['pakket_id']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
+						$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
 						$menu[$lang->translate(25)][$lang->translate(27).' '.$pakket['pakket_id']]['plaatje'] = 'stream.png';
 					}
 				}
