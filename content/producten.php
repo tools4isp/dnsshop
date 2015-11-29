@@ -61,7 +61,7 @@
 						$html .= '<div class="tablestop1"><table>';
 							
 							$html .= '<tr><td>'.$lang->translate(1200).'</td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
-							$html .= '<tr><td>'.$lang->translate(690).'</td><td>'.$pakket_name.'</td><td><input type="text" name="pakket_name" id="domlimit" value="'.$pakket_name.'"></td></tr>';
+							$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td><input type="text" name="pakket_name" id="domlimit" value="'.$pakket_name.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(666).'</td><td>'.$domain_pakket_used.'</td><td><input type="text" name="domlimit" id="domlimit" value="'.$domain_pakket_limit.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(667).'</td><td>'.$template_pakket_used.'</td><td><input type="text" name="temlimit" id="temlimit" value="'.$template_pakket_limit.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(668).'</td><td>'.$domain_total_used.'</td><td>'.$domain_total_limit.'</td></tr>';
@@ -95,7 +95,7 @@
 						$html .= ''.$lang->translate(671).'<br /><br /></p>';
 						$html .= '<div class="tablestop1"><table>';
 						$html .= '<tr><td>'.$lang->translate(1200).'</td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
-						$html .= '<tr><td>'.$lang->translate(690).'</td><td>'.$pakket_name.'</td><td>'.$pakket_name.'</td></tr>';
+						$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td>'.$pakket_name.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(666).'</td><td>'.$domain_pakket_used.'</td><td>'.$domain_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(667).'</td><td>'.$template_pakket_used.'</td><td>'.$template_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(668).'</td><td>'.$domain_total_used.'</td><td>'.$domain_total_limit.'</td></tr>';
@@ -115,7 +115,7 @@
 						$html .= ''.$lang->translate(682).'<br /><br />';
 						$html .= '<table border="1">';
 						$html .= '<tr><td></td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
-						$html .= '<tr><td>'.$lang->translate(690).'</td><td>'.$pakket_name.'</td><td>'.$pakket_name.'</td></tr>';
+						$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td>'.$pakket_name.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(680).'</td><td>'.$listeners_pakket_used.'</td><td>'.$listeners_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(681).'</td><td>'.$listeners_total_used.'</td><td>'.$listeners_total_limit.'</td></tr>';
 						$html .= '</table>';
