@@ -44,6 +44,7 @@
 								$html .= '<br /><p><b>'.$lang->translate(674).'</b></p><br /><br />';
 							}
 						}else{
+							$pakket_name	=	$pakket['pakket_name'];
 							$domain_pakket_limit = dns_get_value_pakket($pakket['pakket_id'],'domain');
 							$template_pakket_limit = dns_get_value_pakket($pakket['pakket_id'],'template');
 							$domain_pakket_used = dns_get_value_current_usage($pakket['pakket_id'],'domain');
@@ -60,6 +61,7 @@
 						$html .= '<div class="tablestop1"><table>';
 							
 							$html .= '<tr><td>'.$lang->translate(1200).'</td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
+							$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td><input type="text" name="pakket_name" id="domlimit" value="'.$pakket_name.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(666).'</td><td>'.$domain_pakket_used.'</td><td><input type="text" name="domlimit" id="domlimit" value="'.$domain_pakket_limit.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(667).'</td><td>'.$template_pakket_used.'</td><td><input type="text" name="temlimit" id="temlimit" value="'.$template_pakket_limit.'"></td></tr>';
 							$html .= '<tr><td>'.$lang->translate(668).'</td><td>'.$domain_total_used.'</td><td>'.$domain_total_limit.'</td></tr>';
@@ -78,6 +80,7 @@
 			if($pakket !== FALSE){
 				if(get_value_get('p') == "dns"){
 					if(check_user_subuser(get_value_session('from_db','id'),$pakket['user_id'],$type = 3) !== FALSE || $pakket['user_id'] == get_value_session('from_db','id') || get_value_session('from_db','is_admin') == '1'){
+						$pakket_name	=	$pakket['pakket_name'];
 						$domain_pakket_limit = dns_get_value_pakket($pakket['pakket_id'],'domain');
 						$template_pakket_limit = dns_get_value_pakket($pakket['pakket_id'],'template');
 						$domain_pakket_used = dns_get_value_current_usage($pakket['pakket_id'],'domain');
@@ -92,6 +95,7 @@
 						$html .= ''.$lang->translate(671).'<br /><br /></p>';
 						$html .= '<div class="tablestop1"><table>';
 						$html .= '<tr><td>'.$lang->translate(1200).'</td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
+						$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td>'.$pakket_name.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(666).'</td><td>'.$domain_pakket_used.'</td><td>'.$domain_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(667).'</td><td>'.$template_pakket_used.'</td><td>'.$template_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(668).'</td><td>'.$domain_total_used.'</td><td>'.$domain_total_limit.'</td></tr>';
@@ -100,6 +104,7 @@
 					}
 				}elseif(get_value_get('p') == "stream"){
 					if(check_user_subuser(get_value_session('from_db','id'),$pakket['user_id'],$type = 3) !== FALSE || $pakket['user_id'] == get_value_session('from_db','id') || get_value_session('from_db','is_admin') == '1'){
+						$pakket_name	=	$pakket['pakket_name'];
 						$listeners_pakket_limit = stream_get_value_pakket($pakket['pakket_id'],'listeners');
 						$listeners_pakket_used = stream_get_value_current_usage($pakket['pakket_id'],'listeners');
 						$listeners_total_limit = pakketten_get_value_size_stream($pakket['user_id'],'listeners');
@@ -110,6 +115,7 @@
 						$html .= ''.$lang->translate(682).'<br /><br />';
 						$html .= '<table border="1">';
 						$html .= '<tr><td></td><td>'.$lang->translate(664).'</td><td>'.$lang->translate(665).'</td></tr>';
+						$html .= '<tr><td>'.$lang->translate(690).'</td><td> - </td><td>'.$pakket_name.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(680).'</td><td>'.$listeners_pakket_used.'</td><td>'.$listeners_pakket_limit.'</td></tr>';
 						$html .= '<tr><td>'.$lang->translate(681).'</td><td>'.$listeners_total_used.'</td><td>'.$listeners_total_limit.'</td></tr>';
 						$html .= '</table>';
@@ -476,7 +482,7 @@
 					}elseif($product['type'] == 'stream'){
 						$type = $lang->translate(679);
 					}
-					$html .= '<tr><td><a href="?lang='.lang_get_value_defaultlang().'&page='.$product['type'].'&id='.$product['pakket_id'].'"><u>'.$type.' '.$product['pakket_id'].'</u></a></td><td>';
+					$html .= '<tr><td><a href="?lang='.lang_get_value_defaultlang().'&page='.$product['type'].'&id='.$product['pakket_id'].'"><u>'.$type.' - '.$product['pakket_name'].'</u></a></td><td>';
 					if(check_user_right(get_value_session('from_db','id'),'klantbekijken',get_value_session('from_db','is_admin')) != FALSE){
 					$html .= '<u><a href="?lang='.lang_get_value_defaultlang().'&page=klanten&type=bekijken&id='.$userdata['id'].'">'.$userdata['username'].'</a></u>';
 					}else{

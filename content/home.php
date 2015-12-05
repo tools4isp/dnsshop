@@ -150,7 +150,7 @@
 					}elseif($product['type'] == 'stream'){
 						$type = $lang->translate(679);
 					}
-					$html .= '<tr><td><a href="?lang='.lang_get_value_defaultlang().'&page='.$product['type'].'&id='.$product['pakket_id'].'"><u>'.$type.' '.$product['pakket_id'].'</u></a></td><td>';
+					$html .= '<tr><td><a href="?lang='.lang_get_value_defaultlang().'&page='.$product['type'].'&id='.$product['pakket_id'].'"><u>'.$type.' - '.$product['pakket_name'].'</u></a></td><td>';
 					if(check_user_right(get_value_session('from_db','id'),'klantbekijken',get_value_session('from_db','is_admin')) != FALSE){
 					$html .= '<u><a href="?lang='.lang_get_value_defaultlang().'&page=klanten&type=bekijken&id='.$userdata['id'].'">'.$userdata['username'].'</a></u>';
 					}else{

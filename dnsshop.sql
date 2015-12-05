@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `pakketten` (
   `type` varchar(25) NOT NULL,
   `user_id` int(255) NOT NULL,
   `pakket_id` int(255) NOT NULL,
+  `pakket_name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `type` (`type`,`user_id`,`pakket_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
