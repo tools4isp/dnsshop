@@ -14,6 +14,8 @@ mysql_select_db('pdns');
 $test = 0; // change to 0 to delete records/domains after $checks tests that failed, if set to something else it will not delete anything
 $checks = 7; // define the number of checks before deleting records, this has to be a number. Setting it to 0 will clean it immediately after 1 failed check
 $verbose = 0; // set to 1 to be verbose (output domainnames that are deleted/are to be deleted (depending on the $test setting)
+$sendmail = 0; // Send mail with domains with errors
+$mailaddress = 'recipient@example.com'; // Mail address to send the mail to
 
 	function is_stil_active($domain,$server){
 		$axfr = shell_exec("dig AXFR ".$domain." @".$server."");
@@ -66,8 +68,8 @@ if(mysql_num_rows($query) == FALSE){
 		echo "Done
 ";
 	}
-	if($dump != ''){
-		mail("mark@streamservice.nl","AXFR failed for the following domain names",$dump);
+	if($dump != '' && $sendmail === 1){
+		mail($mailaddress,"AXFR failed for the following domain names",$dump);
 	}
 }
 ?>
