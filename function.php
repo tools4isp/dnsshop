@@ -766,6 +766,7 @@
 					$return['type'] = $row['type'];
 					$return['user_id'] = $row['user_id'];
 					$return['pakket_id'] = $row['pakket_id'];
+					$return['pakket_name'] = $row['pakket_name'];
 				}
 			}
 			if($num === 0){
@@ -801,6 +802,7 @@
 					$return[$row['id']]['type'] = $row['type'];
 					$return[$row['id']]['user_id'] = $row['user_id'];
 					$return[$row['id']]['pakket_id'] = $row['pakket_id'];
+					$return[$row['id']]['pakket_name'] = $row['pakket_name'];
 				}
 			}
 			if($num === 0){
