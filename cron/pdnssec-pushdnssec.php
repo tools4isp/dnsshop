@@ -153,12 +153,12 @@ if($query->num_rows == "0"){
 				}
 				foreach($ds as $record){
 					if($record['add'] === 1){
-						$mysqli->query('INSERT INTO `dnssec` (`domainid`,`type`,`record`) VALUES ("'.$row['id'].'","DS","'.$record.'")');
+						$mysqli->query('INSERT INTO `dnssec` (`domainid`,`type`,`record`) VALUES ("'.$row['id'].'","DS","'.$record['record'].'")');
 					}
 				}
 				foreach($dnskey as $record){
 					if($record['add'] === 1){
-						$mysqli->query('INSERT INTO `dnssec` (`domainid`,`type`,`record`) VALUES ("'.$row['id'].'","DNSKEY","'.$record.'")');
+						$mysqli->query('INSERT INTO `dnssec` (`domainid`,`type`,`record`) VALUES ("'.$row['id'].'","DNSKEY","'.$record['record'].'")');
 					}
 				}
 			}
