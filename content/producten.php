@@ -38,8 +38,10 @@
 							$pakket_name = get_value_post('pakket_name');
 							$temlimiet = get_value_post('temlimit');
 							if($domlimiet !== FALSE && $temlimiet !== FALSE){
-								$sql = "UPDATE `pakketten_dns` SET `pakket_name` = '".$mysqli->real_escape_string($pakket_name)."', `max_domain` = '".$mysqli->real_escape_string($domlimiet)."', `max_templates` = '".$mysqli->real_escape_string($temlimiet)."' WHERE `id` LIKE '".$mysqli->real_escape_string($pakket['pakket_id'])."'";
+								$sql = "UPDATE `pakketten_dns` SET `max_domain` = '".$mysqli->real_escape_string($domlimiet)."', `max_templates` = '".$mysqli->real_escape_string($temlimiet)."' WHERE `id` LIKE '".$mysqli->real_escape_string($pakket['pakket_id'])."'";
+								$sql2 = "UPDATE `pakketten` SET `pakket_name` = '".$mysqli->real_escape_string($pakket_name)."' WHERE `id` LIKE '".$mysqli->real_escape_string($pakket['id'])."'";
 								$query = $mysqli->query($sql);
+								$query2 = $mysqli->query($sql2);
 								$html .= '<br /><p><b>'.$lang->translate(673).'</b></p><br /><br />';
 							}else{
 								$html .= '<br /><p><b>'.$lang->translate(674).'</b></p><br /><br />';
