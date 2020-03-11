@@ -551,8 +551,8 @@
 		}
 		$menu[$lang->translate(7)][$lang->translate(30)]['url'] = '&page=gegevens';
 		$menu[$lang->translate(7)][$lang->translate(30)]['plaatje'] = 'mijn_gegevens.png';
-		$menu[$lang->translate(7)][$lang->translate(33)]['url'] = '&page=gegevens&type=feedback';
-		$menu[$lang->translate(7)][$lang->translate(33)]['plaatje'] = 'feedback.png';
+		//$menu[$lang->translate(7)][$lang->translate(33)]['url'] = '&page=gegevens&type=feedback';
+		//$menu[$lang->translate(7)][$lang->translate(33)]['plaatje'] = 'feedback.png';
 		$menu[$lang->translate(7)][$lang->translate(14)]['url'] = '&page=uitloggen';
 		$menu[$lang->translate(7)][$lang->translate(14)]['plaatje'] = 'uitloggen.png';
 		if($page == 'home'){
@@ -564,11 +564,11 @@
 			foreach($pakketten as $pakket){
 				if($pakket['user_id'] == get_value_session('from_db','id')){
 					if($pakket['type'] == 'dns'){
-						$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
-						$menu[$lang->translate(25)][$lang->translate(26).' '.$pakket['pakket_id']]['plaatje'] = 'dns.png';
+						//$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
+						//$menu[$lang->translate(25)][$lang->translate(26).' '.$pakket['pakket_id']]['plaatje'] = 'dns.png';
 					}elseif($pakket['type'] == 'stream'){
-						$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
-						$menu[$lang->translate(25)][$lang->translate(27).' '.$pakket['pakket_id']]['plaatje'] = 'stream.png';
+						//$menu[$lang->translate(25)][$pakket['pakket_name']]['url'] = '&page='.$pakket['type'].'&id='.$pakket['pakket_id'];
+						//$menu[$lang->translate(25)][$lang->translate(27).' '.$pakket['pakket_id']]['plaatje'] = 'stream.png';
 					}
 				}
 			}
